@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recommended Tracks</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 50px 20px 20px; /* Add 50px of padding to the top of the body */
+        box-sizing: border-box;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      a {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">HOME</a>
+    <h1>Recommended Tracks</h1>
+    <% if (Array.isArray(tracks) && tracks.length > 0) { %>
+    <ul>
+      <% tracks.forEach(track => { %>
+      <li>
+        <strong><%= track.name %></strong> by <%= track.artists[0].name %>
+      </li>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <p>No tracks found.</p>
+    <% } %>
+  </body>
+</html>
